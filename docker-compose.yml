@@ -1,13 +1,15 @@
 services:
   lobster:
-    build: .
+    build:
+      context: .
+      args:
+        ZIP_FILE: bridge-test.zip #change this to your file version
     container_name: lobster
     ports:
-      - "8080:8080"
       - "443:443"
       - "80:80"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      test: ["CMD", "curl", "-f", "http://localhost/bridge"]
       interval: 10s
       timeout: 3s
       retries: 5

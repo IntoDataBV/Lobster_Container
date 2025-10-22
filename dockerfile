@@ -2,14 +2,16 @@ FROM eclipse-temurin:11-jdk
 
 WORKDIR /app
 
-COPY lobsterBridge.zip /app
+ARG ZIP_FILE
+
+COPY ${ZIP_FILE} /app/file.zip
 
 RUN apt-get update && apt-get install -y unzip \
-    && unzip lobsterBridge.zip -d /app \
-    && rm lobsterBridge.zip
+    && unzip file.zip -d /app \
+    && rm file.zip
 
 #expose the https and http ports   
-EXPOSE 443 80
+#EXPOSE 443 80
 
 #command to run the Lobster wrapper.jar
 CMD ["java", "-jar", "bin/wrapper.jar", "--run"]
