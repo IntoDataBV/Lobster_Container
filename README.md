@@ -88,8 +88,9 @@ git push origin main
 Go to your Lobster Data Platform. On the top right hand corner download the linux version
 of the lobster bridge zip file.
 
-Move the zip into github repo directory and make sure it is named "lobsterBridge.zip"
-this is how the Lobster Bridge is named within the dockerfile, any other names will throw an error.
+Move the zip into github repo directory. 
+Change the `ZIP_FILE:` value in the docker-compose.yml to the name of your .zip file
+This will change the ARG in the dockerfile to work with your Lobster Bridge version.
 
 ### 4. Running the docker-compose
 
