@@ -1,1 +1,3 @@
 *.zip
+connectors/*.jar
+!connectors/.gitignore

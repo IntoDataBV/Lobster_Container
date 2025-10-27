@@ -92,6 +92,8 @@ Move the zip into github repo directory.
 Change the `ZIP_FILE:` value in the docker-compose.yml to the name of your .zip file
 This will change the ARG in the dockerfile to work with your Lobster Bridge version.
 
+If you need any connectors to various databases please add the `.jar` file to the connectors directory of the repo and uncomment and line in the dockerfile.
+
 ### 4. Running the docker-compose
 
 ```bash
